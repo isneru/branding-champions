@@ -10,7 +10,7 @@ interface Props {
 const { champion } = Astro.props
 ---
 
-<Base title={champion.name}>
+<Base icon={`http://ddragon.leagueoflegends.com/cdn/13.1.1/img/champion/${champion.id}.png`} title={champion.name}>
   <div class="mb-8">
     <div class="mb-2">
       {
