@@ -12,7 +12,7 @@ const champions = await getAllChampions()
     {
       champions.map(champion => (
         <div class="py-4 border-b">
-          <a class="text-blue-700 hover:underline" href={`/champions/${champion.id}`}>
+          <a class="text-blue-700 hover:underline" href={`/champions/${champion.id.toLowerCase()}`}>
             {champion.name}
           </a>
         </div>
