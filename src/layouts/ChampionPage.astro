@@ -5,20 +5,17 @@ import type { SingleChampion } from "@types"
 
 interface Props {
   champion: SingleChampion
-  title: string
 }
 
-const { champion, title } = Astro.props
+const { champion } = Astro.props
 ---
 
-<Base title={title}>
+<Base title={champion.name}>
   <div class="mb-8">
     <div class="mb-2">
       {
         champion.tags?.map(tag => (
-          <a
-            class="mr-2 py-1 px-2 uppercase text-white bg-red-700 rounded-full"
-            href={`/champions/tag/${tag.toLocaleLowerCase()}`}>
+          <a class="mr-2 py-1 px-2 uppercase text-white bg-red-700 rounded-full" href={`/champions/tags/${tag}`}>
             {tag}
           </a>
         ))
@@ -28,7 +25,7 @@ const { champion, title } = Astro.props
   </div>
   <Picture
     class="mb-8"
-    src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion.name}_0.jpg`}
+    src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion.id}_0.jpg`}
     widths={[77, 154, 308]}
     sizes="(max-width: 77px) 77px, (max-width: 154px) 154px, 308px"
     aspectRatio="11:20"

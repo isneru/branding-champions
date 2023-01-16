@@ -1,9 +1,4 @@
-const capitalizeChampionName = (championName: string): string => {
-  return championName.charAt(0).toUpperCase() + championName.slice(1)
-}
-const uncapitalizeChampionName = (championName: string): string => {
-  return championName[0].toLocaleLowerCase() + championName.substring(1)
-}
+import type { Champion } from "@types"
 
 const getAllChampionNames = async () => {
   const response = await fetch("http://ddragon.leagueoflegends.com/cdn/13.1.1/data/en_US/champion.json")
@@ -15,4 +10,11 @@ const getAllChampionNames = async () => {
   return championNames
 }
 
-export { capitalizeChampionName, uncapitalizeChampionName, getAllChampionNames }
+const getAllChampions = async () => {
+  const response = await fetch("http://ddragon.leagueoflegends.com/cdn/13.1.1/data/en_US/champion.json")
+  const data = await response.json()
+  const champions: Champion[] = Object.values(data.data)
+  return champions
+}
+
+export { getAllChampionNames, getAllChampions }

@@ -95,13 +95,4 @@ export interface Leveltip {
 }
 /*************************/
 
-interface RootObject {
-  type: string
-  format: string
-  version: string
-  data: {
-    [key: string]: SingleChampion
-  }
-}
-
-export type { Champion, SingleChampion, RootObject }
+export type { Champion, SingleChampion }

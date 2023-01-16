@@ -1,13 +1,18 @@
 ---
+export const prerender = true
 import Base from "@layouts/Base.astro"
-
 import { getAllChampions } from "@utils"
 
-const champions = await getAllChampions()
+let { tag } = Astro.params
+
+let champions = await getAllChampions()
+champions = champions.filter(champ => {
+  return champ.tags.includes(tag as string)
+})
 ---
 
 <Base title="Champions">
-  <h1 class="text-4xl mb-8">All Champs</h1>
+  <h1 class="text-4xl mb-8">All {tag} Champs</h1>
   <div class="grid grid-cols-3">
     {
       champions.map(champion => (
