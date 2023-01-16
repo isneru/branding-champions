@@ -1,0 +1,25 @@
+---
+import Base from "@layouts/Base.astro"
+
+import type { Champion } from "@types"
+import { uncapitalizeChampionName } from "@utils"
+
+const response = await fetch("http://ddragon.leagueoflegends.com/cdn/13.1.1/data/en_US/champion.json")
+const data = await response.json()
+const champions: Champion[] = Object.values(data.data)
+---
+
+<Base title="Champions">
+  <h1 class="text-4xl mb-8">All Champs</h1>
+  <div class="grid grid-cols-3">
+    {
+      champions.map(champion => (
+        <div class="py-4 border-b">
+          <a class="text-blue-700 hover:underline" href={`/champions/${uncapitalizeChampionName(champion.name)}`}>
+            {champion.name}
+          </a>
+        </div>
+      ))
+    }
+  </div>
+</Base>
