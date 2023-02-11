@@ -1,49 +1,49 @@
 ---
-import Navbar from "@components/Navbar.astro"
+import Navbar from '@components/Navbar.astro'
 
 interface Props {
-  title: string
-  icon?: string
+	title: string
+	icon?: string
 }
 
-const { title, icon = "/branding.png" } = Astro.props
+const { title, icon = '/branding.png' } = Astro.props
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>{title}</title>
-    <link rel="icon" type="image/x-icon" href={icon} />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      @font-face {
-        font-family: "Inter";
-        src: url("/fonts/Inter-Regular.woff2") format("woff2");
-        font-display: swap;
-        font-weight: 400;
-      }
+	<head>
+		<meta charset="utf-8" />
+		<title>{title}</title>
+		<link rel="icon" type="image/x-icon" href={icon} />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			@font-face {
+				font-family: 'Inter';
+				src: url('/fonts/Inter-Regular.woff2') format('woff2');
+				font-display: swap;
+				font-weight: 400;
+			}
 
-      @font-face {
-        font-family: "Inter";
-        src: url("/fonts/Inter-Italic.woff2") format("woff2");
-        font-display: swap;
-        font-weight: 400;
-        font-style: italic;
-      }
+			@font-face {
+				font-family: 'Inter';
+				src: url('/fonts/Inter-Italic.woff2') format('woff2');
+				font-display: swap;
+				font-weight: 400;
+				font-style: italic;
+			}
 
-      @font-face {
-        font-family: "Inter";
-        src: url("/fonts/Inter-Bold.woff2") format("woff2");
-        font-display: swap;
-        font-weight: 700;
-      }
-    </style>
-  </head>
-  <body>
-    <Navbar />
-    <div class="max-w-5xl mx-auto mt-16">
-      <slot />
-    </div>
-  </body>
+			@font-face {
+				font-family: 'Inter';
+				src: url('/fonts/Inter-Bold.woff2') format('woff2');
+				font-display: swap;
+				font-weight: 700;
+			}
+		</style>
+	</head>
+	<body>
+		<Navbar />
+		<div class="max-w-5xl mx-auto mt-16">
+			<slot />
+		</div>
+	</body>
 </html>

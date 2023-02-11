@@ -1,7 +1,7 @@
 ---
 export const prerender = true
-import ChampionPage from "@layouts/ChampionPage.astro"
-import { getChampionById } from "@utils"
+import ChampionPage from '@layouts/ChampionPage.astro'
+import { getChampionById } from '@utils'
 
 let { id } = Astro.params
 const champion = await getChampionById(id as string)

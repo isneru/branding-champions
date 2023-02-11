@@ -1,22 +1,22 @@
 ---
-import Base from "@layouts/Base.astro"
+import Base from '@layouts/Base.astro'
 
-import { getAllChampions } from "@utils"
+import { getAllChampions } from '@utils'
 
 const champions = await getAllChampions()
 ---
 
 <Base title="Champions">
-  <h1 class="text-4xl mb-8">All Champs</h1>
-  <div class="grid grid-cols-3">
-    {
-      champions.map(champion => (
-        <div class="py-4 border-b">
-          <a class="text-blue-700 hover:underline" href={`/champions/${champion.id.toLowerCase()}`}>
-            {champion.name}
-          </a>
-        </div>
-      ))
-    }
-  </div>
+	<h1 class="text-4xl mb-8">All Champs</h1>
+	<div class="grid grid-cols-3">
+		{
+			champions.map((champion) => (
+				<div class="py-4 border-b">
+					<a class="text-blue-700 hover:underline" href={`/champions/${champion.id.toLowerCase()}`}>
+						{champion.name}
+					</a>
+				</div>
+			))
+		}
+	</div>
 </Base>
