@@ -1,27 +1,27 @@
 ---
 export const prerender = true
-import Base from "@layouts/Base.astro"
-import { getAllChampions } from "@utils"
+import Base from '@layouts/Base.astro'
+import { getAllChampions } from '@utils'
 
 let { tag } = Astro.params
 
 let champions = await getAllChampions()
-champions = champions.filter(champ => {
-  return champ.tags.includes(tag as string)
+champions = champions.filter((champ) => {
+	return champ.tags.includes(tag as string)
 })
 ---
 
 <Base title="Champions">
-  <h1 class="text-4xl mb-8">All {tag} Champs</h1>
-  <div class="grid grid-cols-3">
-    {
-      champions.map(champion => (
-        <div class="py-4 border-b">
-          <a class="text-blue-700 hover:underline" href={`/champions/${champion.id.toLowerCase()}`}>
-            {champion.name}
-          </a>
-        </div>
-      ))
-    }
-  </div>
+	<h1 class="text-4xl mb-8">All {tag} Champs</h1>
+	<div class="grid grid-cols-3">
+		{
+			champions.map((champion) => (
+				<div class="py-4 border-b">
+					<a class="text-blue-700 hover:underline" href={`/champions/${champion.id.toLowerCase()}`}>
+						{champion.name}
+					</a>
+				</div>
+			))
+		}
+	</div>
 </Base>

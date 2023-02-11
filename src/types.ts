@@ -1,97 +1,97 @@
 interface Champion {
-  version: string
-  id: string
-  key: string
-  name: string
-  title: string
-  blurb: string
-  info: Info
-  image: Image
-  tags: string[]
-  partype: string
-  stats: { [key: string]: number }
+	version: string
+	id: string
+	key: string
+	name: string
+	title: string
+	blurb: string
+	info: Info
+	image: Image
+	tags: string[]
+	partype: string
+	stats: { [key: string]: number }
 }
 
 /**************************/
 
 interface SingleChampion {
-  id: string
-  key: string
-  name: string
-  title: string
-  image: Image
-  skins: Skin[]
-  lore: string
-  blurb: string
-  allytips: string[]
-  enemytips: string[]
-  tags: string[]
-  partype: string
-  info: Info
-  stats: { [key: string]: number }
-  spells: Spell[]
-  passive: Passive
-  recommended: any[]
+	id: string
+	key: string
+	name: string
+	title: string
+	image: Image
+	skins: Skin[]
+	lore: string
+	blurb: string
+	allytips: string[]
+	enemytips: string[]
+	tags: string[]
+	partype: string
+	info: Info
+	stats: { [key: string]: number }
+	spells: Spell[]
+	passive: Passive
+	recommended: any[]
 }
 
 export interface Image {
-  full: string
-  sprite: string
-  group: string
-  x: number
-  y: number
-  w: number
-  h: number
+	full: string
+	sprite: string
+	group: string
+	x: number
+	y: number
+	w: number
+	h: number
 }
 
 export interface Info {
-  attack: number
-  defense: number
-  magic: number
-  difficulty: number
+	attack: number
+	defense: number
+	magic: number
+	difficulty: number
 }
 
 export interface Passive {
-  name: string
-  description: string
-  image: Image
+	name: string
+	description: string
+	image: Image
 }
 
 export interface Skin {
-  id: string
-  num: number
-  name: string
-  chromas: boolean
+	id: string
+	num: number
+	name: string
+	chromas: boolean
 }
 
 export interface Spell {
-  id: string
-  name: string
-  description: string
-  tooltip: string
-  leveltip: Leveltip
-  maxrank: number
-  cooldown: number[]
-  cooldownBurn: string
-  cost: number[]
-  costBurn: string
-  datavalues: Datavalues
-  effect: Array<number[] | null>
-  effectBurn: Array<null | string>
-  vars: any[]
-  costType: string
-  maxammo: string
-  range: number[]
-  rangeBurn: string
-  image: Image
-  resource: string
+	id: string
+	name: string
+	description: string
+	tooltip: string
+	leveltip: Leveltip
+	maxrank: number
+	cooldown: number[]
+	cooldownBurn: string
+	cost: number[]
+	costBurn: string
+	datavalues: Datavalues
+	effect: Array<number[] | null>
+	effectBurn: Array<null | string>
+	vars: any[]
+	costType: string
+	maxammo: string
+	range: number[]
+	rangeBurn: string
+	image: Image
+	resource: string
 }
 
 export interface Datavalues {}
 
 export interface Leveltip {
-  label: string[]
-  effect: string[]
+	label: string[]
+	effect: string[]
 }
 /*************************/
 

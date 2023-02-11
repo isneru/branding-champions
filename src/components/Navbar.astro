@@ -1,24 +1,24 @@
 ---
 const items = [
-  { title: "Home", path: "/" },
-  { title: "Champions", path: "/champions" },
-  { title: "About", path: "/about" }
+	{ title: 'Home', path: '/' },
+	{ title: 'Champions', path: '/champions' },
+	{ title: 'About', path: '/about' }
 ]
 ---
 
 <div class="flex bg-black text-white items-center">
-  <div class="font-bold text-lg ml-4"><span class="text-red-400">Brand</span>'ing Champs</div>
-  <div class="ml-auto">
-    <ul class="flex">
-      {
-        items.map(item => (
-          <li>
-            <a class="p-4 block hover:bg-gray-700" href={item.path}>
-              {item.title}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+	<a class="font-bold text-lg ml-4" href="/"><span class="text-red-400">Brand</span>'ing Champs</a>
+	<div class="ml-auto">
+		<ul class="flex">
+			{
+				items.map((item) => (
+					<li>
+						<a class="p-4 block hover:bg-gray-700" href={item.path}>
+							{item.title}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
 </div>
